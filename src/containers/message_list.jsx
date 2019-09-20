@@ -1,22 +1,44 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import { setCities } from '../actions/index';
 
+import { fetchMessages } from '../actions/index';
 import Message from '../components/message';
+import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   componentWillMount() {
-    // this.props.action
+    this.props.fetchMessages(this.props.channel);
   }
 
   render() {
     return (
-      this.props.messages.map((message) => {
-        return <Message message={message} />;
-      })
+      <div>
+        {this.props.messages.map((message) => {
+          return <Message message={message} key={message.created_at} />;
+        })}
+        <MessageForm />
+      </div>
     );
   }
 }
 
-export default MessageList;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { fetchMessages },
+    dispatch
+  );
+}
+
+function mapStateToProps(state) {
+  return {
+    messages: state.messages,
+    channel: state.activeChannel
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
