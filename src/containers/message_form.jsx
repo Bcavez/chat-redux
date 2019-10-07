@@ -21,13 +21,15 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          New Message:
-          <input type="text" value={this.state.content} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div class="message-form">
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            New Message:
+            <input type="text" value={this.state.content} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }

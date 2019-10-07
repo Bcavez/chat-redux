@@ -10,7 +10,7 @@ class Message extends Component {
 
     return (
       <div>
-        <p>{author}</p>
+        <h2>{author}:</h2>
         <p>{content}</p>
       </div>
     );

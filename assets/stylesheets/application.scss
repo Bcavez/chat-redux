@@ -11,14 +11,22 @@ body {
     width: 30%;
   }
   .message-list {
+    height: 100vh;
     width: 70%;
     margin-left: 20px;
     margin-bottom: 20px;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    h2 {
+      color: red;
+    }
     h3 {
       margin-top: 0;
+    }
+    .message-form {
+      position: absolute;
+      bottom: 20px;
     }
   }
 }
