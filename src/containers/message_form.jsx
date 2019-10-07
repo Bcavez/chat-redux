@@ -21,7 +21,7 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <div class="message-form">
+      <div className="message-form">
         <form onSubmit={this.handleSubmit}>
           <label>
             New Message:

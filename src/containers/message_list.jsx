@@ -15,6 +15,14 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.channel);
   }
 
+  componentDidMount() {
+    const intervalID = window.setInterval(fetchMessages, 10000, this.props.channel);
+  }
+
+  componentWillUnmount() {
+    clearInterval(intervalID);
+  }
+
   render() {
     return (
       <div>
