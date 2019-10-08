@@ -8,9 +8,7 @@ const App = () => {
       <div className="channels">
         <p>channels</p>
       </div>
-      <div className="message-list">
         <MessageList />
-      </div>
     </div>
   );
 };

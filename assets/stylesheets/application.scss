@@ -11,7 +11,8 @@ body {
     width: 30%;
   }
   .message-list {
-    height: 100vh;
+    height: 90vh;
+    overflow: scroll;
     width: 70%;
     margin-left: 20px;
     margin-bottom: 20px;
