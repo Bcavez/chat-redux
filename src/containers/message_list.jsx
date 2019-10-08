@@ -7,10 +7,6 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
-  // constructor(props) {
-    // super(props)
-    // this.scrollList = React.createRef();
-  // }
 
   componentWillMount() {
     this.props.fetchMessages(this.props.channel);
