@@ -29,7 +29,7 @@ const initialState = {
     }
   ],
   username: window.prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  channelList: ["general"],
+  channelList: ["general", "channel 1", "channel 2", "channel 3"],
   activeChannel: "general"
 };
 
