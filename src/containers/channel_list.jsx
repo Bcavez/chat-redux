@@ -3,11 +3,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { selectChannel } from '../actions/index';
+import { fetchMessages } from '../actions/index';
 
 class ChannelList extends Component {
   handleClick = (channel) => {
-    // console.log(channel);
     this.props.selectChannel(channel);
+    this.props.fetchMessages(channel);
   }
 
   render () {
@@ -23,7 +24,7 @@ class ChannelList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { selectChannel },
+    { selectChannel, fetchMessages },
     dispatch
   );
 }
