@@ -20,13 +20,17 @@ class MessageForm extends Component {
     this.setState({ content: ''});
   }
 
+  componentDidMount() {
+    this.formInput.focus();
+  }
+
   render() {
     return (
       <div className="message-form">
         <form onSubmit={this.handleSubmit}>
           <label>
             New Message:
-            <input type="text" value={this.state.content} onChange={this.handleChange} />
+            <input type="text" ref={ (input) => {this.formInput = input; } } value={this.state.content} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
