@@ -13,7 +13,7 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    const intervalID = window.setInterval(fetchMessages, 10000, this.props.channel);
+    this.intervalID = window.setInterval(fetchMessages, 1000, this.props.channel);
   }
 
   componentDidUpdate() {
@@ -21,7 +21,7 @@ class MessageList extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(intervalID);
+    clearInterval(this.intervalID);
   }
 
   render() {
